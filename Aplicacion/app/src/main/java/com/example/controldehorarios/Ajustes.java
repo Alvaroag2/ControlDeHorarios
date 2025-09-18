@@ -36,12 +36,13 @@ public class Ajustes extends AppCompatActivity {
         prefs = getSharedPreferences("config", MODE_PRIVATE);
 
         // Cargar la tarifa guardada
-        double tarifaGuardada = prefs.getFloat("tarifa", 10f); // valor por defecto 10
-        tarifa.setText(String.valueOf(tarifaGuardada));
+        double tarifaGuardada = prefs.getFloat("tarifa", 10f);
+        tarifa.setText(String.format("%.2f", tarifaGuardada)); // máximo 2 decimales
 
         // Cargar IRPF
         float irpfGuardado = prefs.getFloat("irpf", 15f);
-        irpf.setText(String.valueOf(irpfGuardado));
+        irpf.setText(String.format("%.2f", irpfGuardado));
+
 
         // Guardar tarifa automáticamente
         tarifa.addTextChangedListener(new TextWatcher() {

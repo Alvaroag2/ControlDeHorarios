@@ -40,7 +40,7 @@ public class TurnoAdapter extends RecyclerView.Adapter<TurnoAdapter.TurnoViewHol
 
         holder.tvFecha.setText(turno.getFechaInicio() + " al " + turno.getFechaFinal());
         holder.tvHoras.setText(turno.getHoras() + "h " + turno.getMinutos() + "m");
-        holder.tvSalario.setText(turno.getTotalPagado() + "€");
+        holder.tvSalario.setText(String.format("%.2f €", turno.getTotalPagado()));
         holder.tvNotas.setText((turno.getNotas().isEmpty() ? "(sin notas)" : turno.getNotas()));
 
         // Detectar clic
